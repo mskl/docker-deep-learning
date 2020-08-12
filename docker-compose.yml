@@ -1,0 +1,17 @@
+version: '3'
+services:
+  jupyter:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "${JUPYTERPORT}:${JUPYTERPORT}"
+      - "${TENSORBOARDPORT}:${TENSORBOARDPORT}"
+    command: bash -c "
+        jupyter notebook --ip=0.0.0.0 --port=${JUPYTERPORT} --allow-root &
+        tensorboard --logdir=/logs --port=${TENSORBOARDPORT} --bind_all
+      "
+    volumes:
+      - "./project/:/app"
+      - "./logs/:/logs"
+    restart: always
