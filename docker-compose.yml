@@ -12,6 +12,6 @@ services:
         tensorboard --logdir=/logs --port=${TENSORBOARDPORT} --bind_all
       "
     volumes:
-      - "./project/:/app"
+      - "${PROJECTFOLDER}:/app"
       - "./logs/:/logs"
     restart: always

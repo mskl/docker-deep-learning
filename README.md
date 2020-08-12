@@ -4,6 +4,8 @@ Unified docker environment for DL development. Contains TF 2.3 and Tensorboard.
 ## Setup
 The following tutorial uses `deepdream` project as an example. Replace this with the name of your own project.
 
+> note: it is possible that you don't have docker-compose installed. In that case simply install it with `sudo pip install docker-compose`
+
 Clone the current project onto your development server
 ```bash
 git clone git@github.com:mskl/docker-deep-learning.git
