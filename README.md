@@ -17,7 +17,7 @@ cd docker-deep-learning
 git clone git@github.com:mskl/deepdream.git
 ```
 
-Edit the `.env` file
+Edit the `.env` file and change the values to your liking
 ```bash
 # Port that is running Jupyter Notebook
 JUPYTERPORT=43603
@@ -25,8 +25,11 @@ JUPYTERPORT=43603
 # Port that is running TB server
 TENSORBOARDPORT=43604
 
-# Name of the project directory (with slashes)
+# Name of the project's directory
 PROJECTFOLDER="./deepdream/"
+
+# Preferably your nickname
+COMPOSE_PROJECT_NAME="matyas"
 ```
 
 ## Usage
