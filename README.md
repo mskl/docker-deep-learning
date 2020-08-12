@@ -6,13 +6,13 @@ The following tutorial uses `deepdream` project as an example. Replace this with
 
 Clone the current project onto your development server
 ```bash
-git clone https://github.com/mskl/docker-deep-learning
+git clone git@github.com:mskl/docker-deep-learning.git
 ```
 
 Enter the folder and clone your project 
 ```bash
 cd docker-deep-learning
-git clone https://github.com/mskl/deepdream
+git clone git@github.com:mskl/deepdream.git
 ```
 
 Edit the `.env` file
