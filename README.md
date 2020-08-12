@@ -39,3 +39,6 @@ Once the container is running, the services should be by default accessible at:
 - jupyter-notebook - [http://127.0.0.1/43603](http://127.0.0.1/43603)
 
 When using tensorboard callbacks, the logs directory is mapped inside the docker image as`/logs`.
+
+## Maintenance
+When we need to update some of the python requirements, please update them and then create a PR.
