@@ -1,4 +1,4 @@
-version: '3'
+version: '2.4'
 services:
   jupyter:
     build: .
@@ -14,4 +14,5 @@ services:
     volumes:
       - "${PROJECTFOLDER}:/app"
       - "./logs/:/logs"
+    runtime: nvidia
     restart: always
