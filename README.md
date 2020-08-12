@@ -25,8 +25,8 @@ JUPYTERPORT=43603
 # Port that is running TB server
 TENSORBOARDPORT=43604
 
-# Name of the project directory
-PROJECTFOLDER="deepdream"
+# Name of the project directory (with slashes)
+PROJECTFOLDER="./deepdream/"
 ```
 
 ## Usage
