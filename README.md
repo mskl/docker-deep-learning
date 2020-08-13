@@ -1,10 +1,10 @@
 # Deep Learning Docker Image
-Unified docker environment for DL development. Contains TF 2.3 and Tensorboard.
+Unified docker environment for DL development. Contains Jupyter, TF2.3 and Tensorboard.
 
 ## Setup
 The following tutorial uses `deepdream` project as an example. Replace this with the name of your own project.
 
-> note: it is possible that you don't have docker-compose installed. In that case simply install it with `sudo pip install docker-compose`
+> NOTE: It is possible that you don't have docker-compose installed. In that case simply install it with `sudo pip install docker-compose`.
 
 Clone the current project onto your development server
 ```bash
@@ -22,13 +22,13 @@ Edit the `.env` file and change the values to your liking
 # Which GPUs are visible to the docker
 NVIDIA_VISIBLE_DEVICES=all
 
-# Port that is running Jupyter Notebook
+# Port running Jupyter Notebook
 JUPYTERPORT=43603
 
-# Port that is running TB server
+# Port running TensorBoard server
 TENSORBOARDPORT=43604
 
-# Name of the project's directory
+# Name of the project directory
 PROJECTFOLDER="./deepdream/"
 
 # Preferably your nickname
