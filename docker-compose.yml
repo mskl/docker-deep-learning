@@ -13,6 +13,6 @@ services:
       "
     volumes:
       - "${PROJECTFOLDER}:/app"
+      - "${PROJECTFOLDER}data:/data"
       - "./logs/:/logs"
-      - "./data/:/data"
     restart: always
