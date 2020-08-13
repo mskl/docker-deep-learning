@@ -12,7 +12,7 @@ COPY ./requirements.txt /app/requirements.txt
 RUN pip3 install --upgrade pip && pip3 install -r requirements.txt
 
 # Copy the contents of the app into target folder
-# COPY ${PROJECTFOLDER}/ /app/
+COPY ${PROJECTFOLDER}/ /app/
 
 # For CUDA profiling, TensorFlow requires CUPTI.
 ENV LD_LIBRARY_PATH /usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
