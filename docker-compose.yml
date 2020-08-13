@@ -15,4 +15,5 @@ services:
       - "${PROJECTFOLDER}:/app"
       - "${PROJECTFOLDER}data:/data"
       - "./logs/:/logs"
+    mem_limit: 60gb
     restart: always
