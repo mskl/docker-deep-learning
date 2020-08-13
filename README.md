@@ -1,5 +1,5 @@
 # Deep Learning Docker Image
-Unified docker environment for DL development. Contains TF 2.3 and Tensorboard.
+Unified docker environment for DL development. Contains Jupyter, TF2.3 and Tensorboard.
 
 ## Setup
 The following tutorial uses `deepdream` project as an example. Replace this with the name of your own project.
