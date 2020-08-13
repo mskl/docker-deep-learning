@@ -14,5 +14,4 @@ services:
     volumes:
       - "${PROJECTFOLDER}:/app"
       - "./logs/:/logs"
-    runtime: nvidia
     restart: always

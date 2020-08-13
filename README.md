@@ -19,6 +19,9 @@ git clone git@github.com:mskl/deepdream.git
 
 Edit the `.env` file and change the values to your liking
 ```bash
+# Which GPUs are visible to the docker
+NVIDIA_VISIBLE_DEVICES=all
+
 # Port that is running Jupyter Notebook
 JUPYTERPORT=43603
 
@@ -33,7 +36,8 @@ COMPOSE_PROJECT_NAME="matyas"
 ```
 
 ## Usage
-Once the setup is done, you can use the following commands to interactively interact with the running docker images:
+Once the setup is done, you can use the following commands to interactively interact with the running docker images. Makefile contains paths to GPU image which requires nvidia driver to be installed. In case of running on device without nvidia driver, you can interact with docker by simply using `docker-compose up` and so on. The GPU commands are:
+
 - `make build` to build a docker image
 - `make run` to build, run and follow logs of an image
 - `make stop` to stop a running image

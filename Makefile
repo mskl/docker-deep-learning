@@ -1,14 +1,14 @@
 # Docker compose shortcuts
 build:
-	docker-compose build
+	docker-compose -f docker-compose.gpu.yml build
 
 run: build
-	docker-compose up -d --remove-orphans
+	docker-compose -f docker-compose.gpu.yml up -d --remove-orphans
 	docker-compose logs -f
 
 stop:
-	docker-compose down
+	docker-compose -f docker-compose.gpu.yml down
 
 bash:
-	docker-compose exec jupyter bash
+	docker-compose -f docker-compose.gpu.yml exec jupyter bash
 
