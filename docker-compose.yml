@@ -5,15 +5,15 @@ services:
     env_file:
       - .env
     ports:
-      - "${JUPYTERPORT}:${JUPYTERPORT}"
-      - "${TENSORBOARDPORT}:${TENSORBOARDPORT}"
+      - "${JUPYTER_PORT}:${JUPYTER_PORT}"
+      - "${TENSORBOARD_PORT}:${TENSORBOARD_PORT}"
     command: bash -c "
         jupyter notebook --ip=0.0.0.0 --port=${JUPYTERPORT} --allow-root &
         tensorboard --logdir=/logs --port=${TENSORBOARDPORT} --bind_all --reload_multifile=true
       "
     volumes:
-      - "${PROJECTFOLDER}:/app"
-      - "${PROJECTFOLDER}data:/data"
+      - "${PROJECT_FOLDER}:/app"
+      - "${PROJECT_FOLDER}data:/data"
       - "./logs/:/logs"
-    mem_limit: 60gb
+    mem_limit: "${DOCKER_MEM_LIMIT}"
     restart: always

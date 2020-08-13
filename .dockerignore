@@ -1,1 +1,5 @@
+# Ignore the data folder in your project to speedup
 */data/*
+
+# Ignore the contents of logs
+logs/*
