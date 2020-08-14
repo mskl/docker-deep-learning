@@ -11,7 +11,7 @@ Clone the current project onto your development server
 git clone git@github.com:mskl/docker-deep-learning.git
 ```
 
-Enter the folder and clone your project 
+Enter the folder and clone your project. If you want to run multiple projects, clone this dir, rename it to something else and then rename it again for different projects.
 ```bash
 cd docker-deep-learning
 git clone git@github.com:mskl/deepdream.git
@@ -31,7 +31,8 @@ TENSORBOARDPORT=43604
 # Name of the project directory
 PROJECTFOLDER="./deepdream/"
 
-# Preferably your nickname
+# Preferably your nickname. If you are running multiple projects on same server,
+# use different project names in each so there are no conflicts between them
 COMPOSE_PROJECT_NAME="matyas"
 ```
 
