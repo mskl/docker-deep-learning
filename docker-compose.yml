@@ -8,8 +8,8 @@ services:
       - "${JUPYTER_PORT}:${JUPYTER_PORT}"
       - "${TENSORBOARD_PORT}:${TENSORBOARD_PORT}"
     command: bash -c "
-        jupyter notebook --ip=0.0.0.0 --port=${JUPYTERPORT} --allow-root &
-        tensorboard --logdir=/logs --port=${TENSORBOARDPORT} --bind_all --reload_multifile=true
+        jupyter notebook --ip=0.0.0.0 --port=${JUPYTER_PORT} --allow-root &
+        tensorboard --logdir=/logs --port=${TENSORBOARD_PORT} --bind_all --reload_multifile=true
       "
     volumes:
       - "${PROJECT_FOLDER}:/app"
