@@ -62,3 +62,4 @@ sudo make run
 ## Stopping the instance
 We are paying for the time that instance existst rerardless that it's stopped or running. Navigate to `Compute` -> `Instances` click the three dots on the right side of instance. Select terminate and if needed, select the checkbox to delete the created disc. Be carefull if you want to persist your disc!!!
 
+![img/delete_boot_disc.png](img/delete_boot_disc.png)
