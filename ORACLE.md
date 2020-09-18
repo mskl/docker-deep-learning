@@ -23,7 +23,7 @@ Go to `Compute` -> `Instances` and click the blue `Create instance` button.
 
 If you have created an instance before and you have not deleted your statring volume, you can select it under `Boot volumes`.
 
-![img/boot_volumes](img/boot_volumes)
+![img/boot_volumes.png](img/boot_volumes.png)
 
 Now we have to select which hardware is going to be used on our instance. There are 2 options, one with 1xP100 GPU and one with 2xP100 GPUs. There are also 3 availability domains. If you can't allocate a resource in one of them, try selecting a different one.
 
