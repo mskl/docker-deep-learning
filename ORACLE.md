@@ -53,7 +53,7 @@ In this step, we will install the NVIDIA drivers, docker, docker-compose and als
 git clone https://github.com/mskl/docker-deep-learning; sudo ./docker-deep-learning/setup.sh
 ```
 
-If you want to start using the service with this `docker-deep-learning` repo, follow with setup the variables in `.env` and clone your project there. To build and run the image type
+Further tutorial is described in the [README.md](README.md) If you want to start using the service with this `docker-deep-learning` repo, follow with setup the variables in `.env` and clone your project there. To build and run the image type
 
 ```bash
 sudo make run
