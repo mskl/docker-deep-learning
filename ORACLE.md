@@ -34,43 +34,13 @@ ssh -i ~/.ssh/id_rsa -L 43603:127.0.0.1:43603 -L 43604:127.0.0.1:43604 ubuntu@13
 The `-i` flag uses the designed private key, and the `-L` flag defines the mapping of forwarded ports to your machine. In this case we use `43603` for a jupyter notebook and `43604` for Tensorboard.
 
 ## Setting up the drivers and packages
-In this step, we will install the NVIDIA drivers, docker, docker-compose and also the docker-compose nvidia plugin.
+In this step, we will install the NVIDIA drivers, docker, docker-compose and also the docker-compose nvidia plugin. The setup is described in the [setup.sh](setup.sh) file. You can either copy-paste the data, or clone this directory and run the setup.
 
 ```bash
-sudo apt-get update
-sudo apt-get upgrade -y
-
-# Add the NVIDIA drivers repo
-# https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html
-sudo apt-get install linux-headers-$(uname -r)
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID | sed -e 's/\.//g')
-wget https://developer.download.nvidia.com/compute/cuda/repos/$distribution/x86_64/cuda-$distribution.pin
-sudo mv cuda-$distribution.pin /etc/apt/preferences.d/cuda-repository-pin-600
-sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/$distribution/x86_64/7fa2af80.pub
-echo "deb http://developer.download.nvidia.com/compute/cuda/repos/$distribution/x86_64 /" | sudo tee /etc/apt/sources.list.d/cuda.list
-
-# Install drivers, docker and docker compose
-sudo apt-get update
-sudo apt-get -y install cuda-drivers docker docker.io  python3-pip
-sudo pip3 install docker-compose
-
-export PATH=/usr/local/cuda-11.0/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-11.0/lib64 ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-sudo /usr/bin/nvidia-persistenced --verbose
-
-# Restart the docker service for the changes to take effect
-sudo systemctl start docker
-sudo systemctl enable docker
+git clone https://github.com/mskl/docker-deep-learning; sudo ./docker-deep-learning/setup.sh
 ```
 
-If you want to start using the service with this `docker-deep-learning` repo, follow with:
-
-```bash
-git clone https://github.com/mskl/docker-deep-learning
-cd docker-deep-learning
-```
-
-now setup the variables in `.env`, add your project and proceed with
+If you want to start using the service with this `docker-deep-learning` repo, follow with setup the variables in `.env` and clone your project there. Then proceed with
 
 ```bash
 sudo make run
