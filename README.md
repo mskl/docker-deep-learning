@@ -1,6 +1,9 @@
 # Deep Learning Docker Image
 Unified docker environment for DL development. Contains Jupyter, TF2.3 and Tensorboard.
 
+## Setup on Oracle cloud
+To setup the requirements (NVIDIA drivers and docker plugin) see the [ORACLE.md](ORACLE.md).
+
 ## Setup
 The following tutorial uses `deepdream` project as an example. Replace this with the name of your own project.
 
