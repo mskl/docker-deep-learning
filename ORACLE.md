@@ -1,8 +1,19 @@
 # Setting up a compute node for training on Oracle Cloud
 The following tutorial will teach you how to install the nvidia driver, docker, docker-compose and also nvidia docker plugin so you can easily use your dockerized projects on the cloud.
 
+# Pricing
+The GPU instances are billed **even if stopped**. Therefore there is no reason to stop the instances. Instead, it would be wise to shutdown the instance and keep the boot volume. The following chart afaik does not include the price for the CPU, but that's negligible.
+
+| Instance  | GPU            | Price/hr |
+|-----------|----------------|----------|
+| VM.GPU2.1 | 1x NVIDIA P100 | US$1.275 |
+| BM.GPU2.2 | 2x NVIDIA P100 | US$2.550 |
+
+If you have allocated boot volume, the pricing is around `US$0.03/GB/month`. So for 256GB drive it should be around 8 USD.
+
+
 ## Logging into the Oracle Cloud
-The console can be accessed at [https://console.eu-frankfurt-1.oraclecloud.com/](https://console.eu-frankfurt-1.oraclecloud.com/). Into the `Cloud tenant` field insert `recombee`. On the next page, under Single Sign-On click continue and sign in into the oracle cloud console using the provided credentials.
+The console can be accessed at [https://console.eu-frankfurt-1.oraclecloud.com/](https://console.eu-frankfurt-1.oraclecloud.com/). Insert `recombee` into `Cloud tenant` field. On the next page, under Single Sign-On, click continue and sign in into the Oracle Cloud Console using the provided credentials.
 
 ## Create the compute instance
 Go to `Compute` -> `Instances` and click the blue `Create instance` button.
@@ -10,7 +21,9 @@ Go to `Compute` -> `Instances` and click the blue `Create instance` button.
 - Click the `Change byte copy` button and select `Canonical Ubuntu 18.04`
 - Under `Configuration` click `Change configuration` button. 
 
-If you have created an instance before and you have not deleted your statring volume, you can select it here as well and have your packages and data ready.
+If you have created an instance before and you have not deleted your statring volume, you can select it under `Boot volumes`.
+
+![img/boot_volumes](img/boot_volumes)
 
 Now we have to select which hardware is going to be used on our instance. There are 2 options, one with 1xP100 GPU and one with 2xP100 GPUs. There are also 3 availability domains. If you can't allocate a resource in one of them, try selecting a different one.
 
@@ -40,7 +53,7 @@ In this step, we will install the NVIDIA drivers, docker, docker-compose and als
 git clone https://github.com/mskl/docker-deep-learning; sudo ./docker-deep-learning/setup.sh
 ```
 
-If you want to start using the service with this `docker-deep-learning` repo, follow with setup the variables in `.env` and clone your project there. Then proceed with
+If you want to start using the service with this `docker-deep-learning` repo, follow with setup the variables in `.env` and clone your project there. To build and run the image type
 
 ```bash
 sudo make run

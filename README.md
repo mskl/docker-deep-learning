@@ -32,7 +32,7 @@ JUPYTERPORT=43603
 TENSORBOARDPORT=43604
 
 # Name of the project directory
-PROJECTFOLDER="./deepdream/"
+PROJECTFOLDER=./deepdream/
 
 # Preferably your nickname. If you are running multiple projects on same server,
 # use different project names in each so there are no conflicts between them
